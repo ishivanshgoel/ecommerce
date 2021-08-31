@@ -33,7 +33,7 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-export default function ButtonAppBar() {
+export default function ButtonAppBar({text}) {
   const classes = useStyles();
 
   const [state, setState] = useState({
@@ -89,7 +89,7 @@ export default function ButtonAppBar() {
             <MenuIcon />
           </IconButton>
           <Typography variant="h6" className={classes.title}>
-            Admin Panel
+            Admin Panel {text? ' - ' + text : null}
           </Typography>
           <Button color="inherit">Menu</Button>
         </Toolbar>
