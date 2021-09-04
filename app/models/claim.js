@@ -1,6 +1,6 @@
 const mongoose = require('mongoose')
 
-const claim = new Schema({
+const Claim = new Schema({
     orderId: {
         type: String,
         required: true
@@ -19,4 +19,4 @@ const claim = new Schema({
     }
 })
 
-module.exports = mongoose.model('Claim', claim)
+module.exports = mongoose.model('Claim', Claim)

@@ -1,7 +1,7 @@
 const mongoose = require('mongoose')
 const status = require('../../utils/orderStatus')
 
-const order = new Schema({
+const Order = new Schema({
     user: {
         type: String,
         require: true
@@ -32,4 +32,4 @@ const order = new Schema({
     }
 })
 
-module.exports = mongoose.model('Order', order)
+module.exports = mongoose.model('Order', Order)
