@@ -1,5 +1,5 @@
-const {verifyAccessToekn} = require('../../../utils/jwt')
-const type = require('../../../utils/userType')
+const {verifyAccessToekn} = require('../../../../utils/jwt')
+const type = require('../../../../utils/userType')
 
 function admin(req, res, next){
     try{

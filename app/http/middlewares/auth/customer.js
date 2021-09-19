@@ -1,5 +1,5 @@
-const { verifyAccessToekn } = require('../../../utils/jwt')
-const type = require('../../../utils/userType')
+const { verifyAccessToekn } = require('../../../../utils/jwt')
+const type = require('../../../../utils/userType')
 
 function customer(req, res, next) {
     try {
