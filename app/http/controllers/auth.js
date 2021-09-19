@@ -1,6 +1,7 @@
 const express = require('express')
 const auth = express.Router()
-const User = require('../app/models/user')
+const User = require('../../models/user')
+const { signAcessToken } = require('../../../utils/jwt')
 
 auth.post('/register', (req, res, next) => {
 
@@ -27,7 +28,11 @@ auth.post('/register', (req, res, next) => {
 
         await user.save()
 
-        res.json(user)
+        res.json({
+            email: user.email,
+            accessToken: signAcessToken(user._id),
+            message: 'success'
+        })
 
     } catch (err) {
         next(err)
@@ -38,21 +43,25 @@ auth.post('/register', (req, res, next) => {
 auth.post('/login', (req, res, next) => {
     try {
 
-        const { email, password } = req.body
+        const { email, password, role } = req.body
 
         if (!email || !password) throw new Error('Email/ Password not found')
 
         const user = await User.findOne({ email })
 
-        if(!user) throw new Error('User does not exist')
+        if (!user) throw new Error('User does not exist')
 
-        if(user.password == password){
-            // authenticated
-            // TODO: send JWT token in response 
-            res.json(user)
-        }
+        if (user.password != password) throw new Error('Invalid Email/ Password')
 
-        throw new Error('Invalid Email/ Password')
+        if(role != user.userType) throw new Error('User role does not match')
+
+        // authenticated
+        res.json({
+            email: user.email,
+            accessToken: signAcessToken(user._id),
+            message: 'success',
+            role: role
+        })
 
     } catch (err) {
         next(err)
