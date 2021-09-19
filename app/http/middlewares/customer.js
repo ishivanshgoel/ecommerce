@@ -1,4 +1,5 @@
 const { verifyAccessToekn } = require('../../../utils/jwt')
+const type = require('../../../utils/userType')
 
 function customer(req, res, next) {
     try {
@@ -10,8 +11,9 @@ function customer(req, res, next) {
         const bearerToken = authHeader.split(' ')
         const token = bearerToken[1]
         let tokenValid = verifyAccessToekn(token)
-        if (tokenValid) next()
 
+        // check user role
+        if (tokenValid && tokenValid.role == type.user) next()
         else throw new Error('Unauthorized User')
 
     } catch (err) {

@@ -30,7 +30,7 @@ auth.post('/register', (req, res, next) => {
 
         res.json({
             email: user.email,
-            accessToken: signAcessToken(user._id),
+            accessToken: signAcessToken(user._id, user.userType),
             message: 'success'
         })
 
@@ -58,7 +58,7 @@ auth.post('/login', (req, res, next) => {
         // authenticated
         res.json({
             email: user.email,
-            accessToken: signAcessToken(user._id),
+            accessToken: signAcessToken(user._id, user.userType),
             message: 'success',
             role: role
         })

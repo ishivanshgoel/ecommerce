@@ -1,10 +1,11 @@
 const jwt = require('jsonwebtoken')
 
 module.exports = {
-    signAcessToken: (userId) => {
+    signAcessToken: (userId, role) => {
 
         let payload = {
-            userId: userId
+            userId: userId,
+            role: role
         }
 
         let options = {

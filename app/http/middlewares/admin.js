@@ -1,4 +1,5 @@
 const {verifyAccessToekn} = require('../../../utils/jwt')
+const type = require('../../../utils/userType')
 
 function admin(req, res, next){
     try{
@@ -11,8 +12,8 @@ function admin(req, res, next){
         const token = bearerToken[1]
         let tokenValid = verifyAccessToekn(token)
 
-        // TODO : check if the user role in admin
-        if(tokenValid) next()
+        // check user role
+        if(tokenValid && tokenValid.role == type.admin) next()
         
         else throw new Error('Unauthorized User')
 
