@@ -4,7 +4,7 @@ const Product = require('../../models/product')
 
 // get products in a particular category
 // /product?category=mensWear
-router.get('/products', (req, res, next) => {
+router.get('/products', async (req, res, next) => {
 
     if(!req.query.category) throw new Error('Product category required!!')
     try {
