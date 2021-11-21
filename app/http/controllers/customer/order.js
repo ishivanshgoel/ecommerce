@@ -21,7 +21,7 @@ router.get('/all', async (req, res, next) => {
 // TODO: add a 1. middleware to check availability of products 2. middleware to compute ammount of the order 3. payment 4. check validity of the request
 router.post('/place', async(req, res, next)=>{
     try{
-        const userId = '111' // get from request payload
+        const userId = req.body.userId // get from request payload
 
         const newOrder = new Order({
             user: userId,
@@ -73,7 +73,7 @@ router.post('/claim', async(req, res, next)=>{
 })
 
 /**get details of existing claim */
-router.get('/claim/:orderId', (req, res, next)=>{
+router.get('/claim/:orderId', async(req, res, next)=>{
     try{
 
         if(!req.params.orderId) throw new Error('Parameter missing')

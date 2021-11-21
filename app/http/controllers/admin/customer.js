@@ -28,8 +28,8 @@ router.patch('/', async (req, res, next) => {
         if(!req.body) throw new Error('Bad Request')
 
         let updateObject = req.body
-        let id = req.body.id
-        User.updateOne({_id  : ObjectId(id)}, {$set: updateObject});
+        let id = req.body._id
+        User.updateOne({_id  : id}, {$set: updateObject});
         res.json({
             message: "success"
         })

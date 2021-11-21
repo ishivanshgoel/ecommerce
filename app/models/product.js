@@ -1,6 +1,6 @@
 const mongoose = require('mongoose')
 
-const Product = new Schema({
+const Product = new mongoose.Schema({
     name: {
         type: String,
         require: true
@@ -19,6 +19,10 @@ const Product = new Schema({
     },
     quantity: {
         type: Number,
+        required: true
+    },
+    imageUrl: {
+        type: String,
         required: true
     },
     createdOn: {

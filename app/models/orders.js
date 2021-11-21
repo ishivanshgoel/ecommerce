@@ -1,7 +1,7 @@
 const mongoose = require('mongoose')
 const status = require('../../utils/orderStatus')
 
-const Order = new Schema({
+const Order = new mongoose.Schema({
     user: {
         type: String,
         require: true

@@ -1,6 +1,6 @@
 const mongoose = require('mongoose')
 
-const Claim = new Schema({
+const Claim = new mongoose.Schema({
     orderId: {
         type: String,
         required: true

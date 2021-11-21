@@ -9,7 +9,7 @@ const Order = require('../../../models/orders')
 router.get('/', async(req, res, next)=>{
     try{
 
-        let orders = await Order.find({}).exec()
+        let orders = await Order.find({}).exec() 
 
         res.json({
             data: orders,
@@ -29,8 +29,8 @@ router.patch('/', async (req, res, next) => {
         if(!req.body) throw new Error('Bad Request')
 
         let updateObject = req.body
-        let id = req.body.id
-        Order.updateOne({_id  : ObjectId(id)}, {$set: updateObject});
+        let id = req.body._id
+        Order.updateOne({_id  : id}, {$set: updateObject});
         res.json({
             message: "success"
         })

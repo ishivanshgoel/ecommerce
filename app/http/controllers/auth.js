@@ -3,7 +3,7 @@ const auth = express.Router()
 const User = require('../../models/user')
 const { signAcessToken } = require('../../../utils/jwt')
 
-auth.post('/register', (req, res, next) => {
+auth.post('/register', async(req, res, next) => {
 
     try {
         const { email, password, firstName, lastName, phoneNumber } = req.body
@@ -40,7 +40,7 @@ auth.post('/register', (req, res, next) => {
 
 })
 
-auth.post('/login', (req, res, next) => {
+auth.post('/login', async(req, res, next) => {
     try {
 
         const { email, password, role } = req.body
@@ -67,3 +67,5 @@ auth.post('/login', (req, res, next) => {
         next(err)
     }
 })
+
+module.exports = auth

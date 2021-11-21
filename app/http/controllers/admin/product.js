@@ -9,12 +9,12 @@ const Product = require('../../../models/product')
 router.post('/', async (req, res, next) => {
     try {
 
-        const { name, price, quantity, description, category } = req.body
-        if (!name || !price || !quantity || !description || !category) {
+        const { name, price, quantity, description, category, imageUrl } = req.body
+        if (!name || !price || !quantity || !description || !category || !imageUrl) {
             throw new Error('Bad Request!!')
         }
 
-        var product = new Product({ name, price, description, category, quantity });
+        var product = new Product({ name, price, description, category, quantity, imageUrl });
         product.save(function (err, data) {
             if (err) throw err;
             else{
@@ -37,8 +37,8 @@ router.patch('/', async (req, res, next) => {
         if(!req.body) throw new Error('Bad Request')
 
         let updateObject = req.body
-        let id = req.body.id
-        Product.updateOne({_id  : ObjectId(id)}, {$set: updateObject});
+        let id = req.body._id
+        Product.updateOne({_id  : id}, {$set: updateObject});
         res.json({
             message: "success"
         })
