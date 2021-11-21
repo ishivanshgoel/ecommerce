@@ -8,6 +8,7 @@ import {
 // Pages - Customer and Admin
 // Customer
 import CustomerMain from './Pages/Customer/Main'
+import ViewProduct from './Pages/Customer/View'
 
 // Admin
 import AdminLogin from './Pages/Admin/Login'
@@ -31,6 +32,9 @@ function App() {
           </Route>
           <Route exact path={routes['admin']}>
             <AdminLogin />
+          </Route>
+          <Route exact path={routes['viewproduct']}>
+            <ViewProduct/>
           </Route>
 
 

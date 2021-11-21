@@ -1,5 +1,6 @@
 {
     "customer": "/",
+    "viewproduct": "/:id",
     "admin": "/admin",
     "adminDashBoard": "/admin/dashboard",
     "adminProductAdd": "/admin/product/add",

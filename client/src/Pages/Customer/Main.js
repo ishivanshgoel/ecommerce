@@ -8,8 +8,15 @@ import CardMedia from '@mui/material/CardMedia';
 import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
 import SideBar from '../../Components/SideBar';
+import {useHistory} from 'react-router-dom'
 
 function Home() {
+
+    let history = useHistory()
+
+    let viewProduct = (id)=>{
+        history.push(`/${id}`)
+    }
 
     return (
         <Box sx={{ flexGrow: 1 }}>
@@ -48,7 +55,7 @@ function Home() {
                                 </CardContent>
                                 <CardActions>
                                     <Button size="small" variant="contained">Buy +</Button>
-                                    <Button size="small" variant="contained">View</Button>
+                                    <Button size="small" variant="contained" onClick={()=>viewProduct(123)}>View</Button>
                                 </CardActions>
                             </Card>
                         </Grid>
@@ -71,7 +78,7 @@ function Home() {
                                 </CardContent>
                                 <CardActions>
                                     <Button size="small" variant="contained">Buy +</Button>
-                                    <Button size="small" variant="contained">View</Button>
+                                    <Button size="small" variant="contained" onClick={()=>viewProduct(123)}>View</Button>
                                 </CardActions>
                             </Card>
                         </Grid>
@@ -94,7 +101,7 @@ function Home() {
                                 </CardContent>
                                 <CardActions>
                                     <Button size="small" variant="contained">Buy +</Button>
-                                    <Button size="small" variant="contained">View</Button>
+                                    <Button size="small" variant="contained" onClick={()=>viewProduct(123)}>View</Button>
                                 </CardActions>
                             </Card>
                         </Grid>
@@ -117,7 +124,7 @@ function Home() {
                                 </CardContent>
                                 <CardActions>
                                     <Button size="small" variant="contained">Buy +</Button>
-                                    <Button size="small" variant="contained">View</Button>
+                                    <Button size="small" variant="contained" onClick={()=>viewProduct(123)}>View</Button>
                                 </CardActions>
                             </Card>
                         </Grid>
@@ -140,7 +147,7 @@ function Home() {
                                 </CardContent>
                                 <CardActions>
                                     <Button size="small" variant="contained">Buy +</Button>
-                                    <Button size="small" variant="contained">View</Button>
+                                    <Button size="small" variant="contained" onClick={()=>viewProduct(123)}>View</Button>
                                 </CardActions>
                             </Card>
                         </Grid>
@@ -163,7 +170,7 @@ function Home() {
                                 </CardContent>
                                 <CardActions>
                                     <Button size="small" variant="contained">Buy +</Button>
-                                    <Button size="small" variant="contained">View</Button>
+                                    <Button size="small" variant="contained" onClick={()=>viewProduct(123)}>View</Button>
                                 </CardActions>
                             </Card>
                         </Grid>
@@ -186,7 +193,7 @@ function Home() {
                                 </CardContent>
                                 <CardActions>
                                     <Button size="small" variant="contained">Buy +</Button>
-                                    <Button size="small" variant="contained">View</Button>
+                                    <Button size="small" variant="contained" onClick={()=>viewProduct(123)}>View</Button>
                                 </CardActions>
                             </Card>
                         </Grid>
@@ -209,7 +216,7 @@ function Home() {
                                 </CardContent>
                                 <CardActions>
                                     <Button size="small" variant="contained">Buy +</Button>
-                                    <Button size="small" variant="contained">View</Button>
+                                    <Button size="small" variant="contained" onClick={()=>viewProduct(123)}>View</Button>
                                 </CardActions>
                             </Card>
                         </Grid>
@@ -232,7 +239,7 @@ function Home() {
                                 </CardContent>
                                 <CardActions>
                                     <Button size="small" variant="contained">Buy +</Button>
-                                    <Button size="small" variant="contained">View</Button>
+                                    <Button size="small" variant="contained" onClick={()=>viewProduct(123)}>View</Button>
                                 </CardActions>
                             </Card>
                         </Grid>
@@ -255,7 +262,7 @@ function Home() {
                                 </CardContent>
                                 <CardActions>
                                     <Button size="small" variant="contained">Buy +</Button>
-                                    <Button size="small" variant="contained">View</Button>
+                                    <Button size="small" variant="contained" onClick={()=>viewProduct(123)}>View</Button>
                                 </CardActions>
                             </Card>
                         </Grid>
@@ -278,7 +285,7 @@ function Home() {
                                 </CardContent>
                                 <CardActions>
                                     <Button size="small" variant="contained">Buy +</Button>
-                                    <Button size="small" variant="contained">View</Button>
+                                    <Button size="small" variant="contained" onClick={()=>viewProduct(123)}>View</Button>
                                 </CardActions>
                             </Card>
                         </Grid>
@@ -301,7 +308,7 @@ function Home() {
                                 </CardContent>
                                 <CardActions>
                                     <Button size="small" variant="contained">Buy +</Button>
-                                    <Button size="small" variant="contained">View</Button>
+                                    <Button size="small" variant="contained" onClick={()=>viewProduct(123)}>View</Button>
                                 </CardActions>
                             </Card>
                         </Grid>
@@ -324,7 +331,7 @@ function Home() {
                                 </CardContent>
                                 <CardActions>
                                     <Button size="small" variant="contained">Buy +</Button>
-                                    <Button size="small" variant="contained">View</Button>
+                                    <Button size="small" variant="contained" onClick={()=>viewProduct(123)}>View</Button>
                                 </CardActions>
                             </Card>
                         </Grid>
@@ -347,7 +354,7 @@ function Home() {
                                 </CardContent>
                                 <CardActions>
                                     <Button size="small" variant="contained">Buy +</Button>
-                                    <Button size="small" variant="contained">View</Button>
+                                    <Button size="small" variant="contained" onClick={()=>viewProduct(123)}>View</Button>
                                 </CardActions>
                             </Card>
                         </Grid>
@@ -370,7 +377,7 @@ function Home() {
                                 </CardContent>
                                 <CardActions>
                                     <Button size="small" variant="contained">Buy +</Button>
-                                    <Button size="small" variant="contained">View</Button>
+                                    <Button size="small" variant="contained" onClick={()=>viewProduct(123)}>View</Button>
                                 </CardActions>
                             </Card>
                         </Grid>
@@ -393,7 +400,7 @@ function Home() {
                                 </CardContent>
                                 <CardActions>
                                     <Button size="small" variant="contained">Buy +</Button>
-                                    <Button size="small" variant="contained">View</Button>
+                                    <Button size="small" variant="contained" onClick={()=>viewProduct(123)}>View</Button>
                                 </CardActions>
                             </Card>
                         </Grid>
@@ -416,7 +423,7 @@ function Home() {
                                 </CardContent>
                                 <CardActions>
                                     <Button size="small" variant="contained">Buy +</Button>
-                                    <Button size="small" variant="contained">View</Button>
+                                    <Button size="small" variant="contained" onClick={()=>viewProduct(123)}>View</Button>
                                 </CardActions>
                             </Card>
                         </Grid>
@@ -439,7 +446,7 @@ function Home() {
                                 </CardContent>
                                 <CardActions>
                                     <Button size="small" variant="contained">Buy +</Button>
-                                    <Button size="small" variant="contained">View</Button>
+                                    <Button size="small" variant="contained" onClick={()=>viewProduct(123)}>View</Button>
                                 </CardActions>
                             </Card>
                         </Grid>
@@ -462,7 +469,7 @@ function Home() {
                                 </CardContent>
                                 <CardActions>
                                     <Button size="small" variant="contained">Buy +</Button>
-                                    <Button size="small" variant="contained">View</Button>
+                                    <Button size="small" variant="contained" onClick={()=>viewProduct(123)}>View</Button>
                                 </CardActions>
                             </Card>
                         </Grid>
@@ -485,7 +492,7 @@ function Home() {
                                 </CardContent>
                                 <CardActions>
                                     <Button size="small" variant="contained">Buy +</Button>
-                                    <Button size="small" variant="contained">View</Button>
+                                    <Button size="small" variant="contained" onClick={()=>viewProduct(123)}>View</Button>
                                 </CardActions>
                             </Card>
                         </Grid>
@@ -508,7 +515,7 @@ function Home() {
                                 </CardContent>
                                 <CardActions>
                                     <Button size="small" variant="contained">Buy +</Button>
-                                    <Button size="small" variant="contained">View</Button>
+                                    <Button size="small" variant="contained" onClick={()=>viewProduct(123)}>View</Button>
                                 </CardActions>
                             </Card>
                         </Grid>
