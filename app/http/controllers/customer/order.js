@@ -89,3 +89,5 @@ router.get('/claim/:orderId', (req, res, next)=>{
         next(err)
     }
 })
+
+module.exports = router
