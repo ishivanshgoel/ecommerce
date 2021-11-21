@@ -57,10 +57,10 @@ const useRowStyles = makeStyles({
           <TableCell component="th" scope="row">
             {row.name}
           </TableCell>
-          <TableCell align="right">{row.calories}</TableCell>
-          <TableCell align="right">{row.fat}</TableCell>
-          <TableCell align="right">{row.carbs}</TableCell>
-          <TableCell align="right">{row.protein}</TableCell>
+          <TableCell align="left">{row.calories}</TableCell>
+          <TableCell align="left">{row.fat}</TableCell>
+          <TableCell align="left">{row.carbs}</TableCell>
+          <TableCell align="left">{row.protein}</TableCell>
         </TableRow>
         <TableRow>
           <TableCell style={{ paddingBottom: 0, paddingTop: 0 }} colSpan={6}>
@@ -74,8 +74,8 @@ const useRowStyles = makeStyles({
                     <TableRow>
                       <TableCell>Date</TableCell>
                       <TableCell>Customer</TableCell>
-                      <TableCell align="right">Amount</TableCell>
-                      <TableCell align="right">Total price ($)</TableCell>
+                      <TableCell align="left">Amount</TableCell>
+                      <TableCell align="left">Total price ($)</TableCell>
                     </TableRow>
                   </TableHead>
                   <TableBody>
@@ -85,8 +85,8 @@ const useRowStyles = makeStyles({
                           {historyRow.date}
                         </TableCell>
                         <TableCell>{historyRow.customerId}</TableCell>
-                        <TableCell align="right">{historyRow.amount}</TableCell>
-                        <TableCell align="right">
+                        <TableCell align="left">{historyRow.amount}</TableCell>
+                        <TableCell align="left">
                           {Math.round(historyRow.amount * row.price * 100) / 100}
                         </TableCell>
                       </TableRow>
@@ -120,31 +120,8 @@ const useRowStyles = makeStyles({
   };
   
   const rows = [
-    createData('Frozen yoghurt', 159, 6.0, 24, 4.0, 3.99),
-    createData('Ice cream sandwich', 237, 9.0, 37, 4.3, 4.99),
-    createData('Eclair', 262, 16.0, 24, 6.0, 3.79),
-    createData('Cupcake', 305, 3.7, 67, 4.3, 2.5),
-    createData('Gingerbread', 356, 16.0, 49, 3.9, 1.5),
-    createData('Frozen yoghurt', 159, 6.0, 24, 4.0, 3.99),
-    createData('Ice cream sandwich', 237, 9.0, 37, 4.3, 4.99),
-    createData('Eclair', 262, 16.0, 24, 6.0, 3.79),
-    createData('Cupcake', 305, 3.7, 67, 4.3, 2.5),
-    createData('Gingerbread', 356, 16.0, 49, 3.9, 1.5),
-    createData('Frozen yoghurt', 159, 6.0, 24, 4.0, 3.99),
-    createData('Ice cream sandwich', 237, 9.0, 37, 4.3, 4.99),
-    createData('Eclair', 262, 16.0, 24, 6.0, 3.79),
-    createData('Cupcake', 305, 3.7, 67, 4.3, 2.5),
-    createData('Gingerbread', 356, 16.0, 49, 3.9, 1.5),
-    createData('Frozen yoghurt', 159, 6.0, 24, 4.0, 3.99),
-    createData('Ice cream sandwich', 237, 9.0, 37, 4.3, 4.99),
-    createData('Eclair', 262, 16.0, 24, 6.0, 3.79),
-    createData('Cupcake', 305, 3.7, 67, 4.3, 2.5),
-    createData('Gingerbread', 356, 16.0, 49, 3.9, 1.5),
-    createData('Frozen yoghurt', 159, 6.0, 24, 4.0, 3.99),
-    createData('Ice cream sandwich', 237, 9.0, 37, 4.3, 4.99),
-    createData('Eclair', 262, 16.0, 24, 6.0, 3.79),
-    createData('Cupcake', 305, 3.7, 67, 4.3, 2.5),
-    createData('Gingerbread', 356, 16.0, 49, 3.9, 1.5),
+    createData('123456', 'Shivansh Goel', 'shivansh@gmail.com', '9050787517', '-', 3.99),
+    createData('906555', 'Prantika Sharma', 'prantika@gmail.com', '99999999999', '-', 4.99),
   ];
   
   function CollapsibleTable() {
@@ -155,10 +132,10 @@ const useRowStyles = makeStyles({
             <TableRow>
               <TableCell />
               <TableCell>Customer Id</TableCell>
-              <TableCell align="right">Name</TableCell>
-              <TableCell align="right">Email</TableCell>
-              <TableCell align="right">Phone</TableCell>
-              <TableCell align="right">Mobile</TableCell>
+              <TableCell align="left">Name</TableCell>
+              <TableCell align="left">Email</TableCell>
+              <TableCell align="left">Phone</TableCell>
+              <TableCell align="left">Mobile</TableCell>
             </TableRow>
           </TableHead>
           <TableBody>

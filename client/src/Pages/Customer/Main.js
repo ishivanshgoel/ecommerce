@@ -47,7 +47,8 @@ function Home() {
                                     </Typography>
                                 </CardContent>
                                 <CardActions>
-                                    <Button size="small" variant="contained">Buy</Button>
+                                    <Button size="small" variant="contained">Buy +</Button>
+                                    <Button size="small" variant="contained">View</Button>
                                 </CardActions>
                             </Card>
                         </Grid>
@@ -69,7 +70,8 @@ function Home() {
                                     </Typography>
                                 </CardContent>
                                 <CardActions>
-                                    <Button size="small" variant="contained">Buy</Button>
+                                    <Button size="small" variant="contained">Buy +</Button>
+                                    <Button size="small" variant="contained">View</Button>
                                 </CardActions>
                             </Card>
                         </Grid>
@@ -91,7 +93,8 @@ function Home() {
                                     </Typography>
                                 </CardContent>
                                 <CardActions>
-                                    <Button size="small" variant="contained">Buy</Button>
+                                    <Button size="small" variant="contained">Buy +</Button>
+                                    <Button size="small" variant="contained">View</Button>
                                 </CardActions>
                             </Card>
                         </Grid>
@@ -113,7 +116,8 @@ function Home() {
                                     </Typography>
                                 </CardContent>
                                 <CardActions>
-                                    <Button size="small" variant="contained">Buy</Button>
+                                    <Button size="small" variant="contained">Buy +</Button>
+                                    <Button size="small" variant="contained">View</Button>
                                 </CardActions>
                             </Card>
                         </Grid>
@@ -135,7 +139,8 @@ function Home() {
                                     </Typography>
                                 </CardContent>
                                 <CardActions>
-                                    <Button size="small" variant="contained">Buy</Button>
+                                    <Button size="small" variant="contained">Buy +</Button>
+                                    <Button size="small" variant="contained">View</Button>
                                 </CardActions>
                             </Card>
                         </Grid>
@@ -157,7 +162,8 @@ function Home() {
                                     </Typography>
                                 </CardContent>
                                 <CardActions>
-                                    <Button size="small" variant="contained">Buy</Button>
+                                    <Button size="small" variant="contained">Buy +</Button>
+                                    <Button size="small" variant="contained">View</Button>
                                 </CardActions>
                             </Card>
                         </Grid>
@@ -179,7 +185,8 @@ function Home() {
                                     </Typography>
                                 </CardContent>
                                 <CardActions>
-                                    <Button size="small" variant="contained">Buy</Button>
+                                    <Button size="small" variant="contained">Buy +</Button>
+                                    <Button size="small" variant="contained">View</Button>
                                 </CardActions>
                             </Card>
                         </Grid>
@@ -201,7 +208,8 @@ function Home() {
                                     </Typography>
                                 </CardContent>
                                 <CardActions>
-                                    <Button size="small" variant="contained">Buy</Button>
+                                    <Button size="small" variant="contained">Buy +</Button>
+                                    <Button size="small" variant="contained">View</Button>
                                 </CardActions>
                             </Card>
                         </Grid>
@@ -223,7 +231,8 @@ function Home() {
                                     </Typography>
                                 </CardContent>
                                 <CardActions>
-                                    <Button size="small" variant="contained">Buy</Button>
+                                    <Button size="small" variant="contained">Buy +</Button>
+                                    <Button size="small" variant="contained">View</Button>
                                 </CardActions>
                             </Card>
                         </Grid>
@@ -245,7 +254,8 @@ function Home() {
                                     </Typography>
                                 </CardContent>
                                 <CardActions>
-                                    <Button size="small" variant="contained">Buy</Button>
+                                    <Button size="small" variant="contained">Buy +</Button>
+                                    <Button size="small" variant="contained">View</Button>
                                 </CardActions>
                             </Card>
                         </Grid>
@@ -267,7 +277,8 @@ function Home() {
                                     </Typography>
                                 </CardContent>
                                 <CardActions>
-                                    <Button size="small" variant="contained">Buy</Button>
+                                    <Button size="small" variant="contained">Buy +</Button>
+                                    <Button size="small" variant="contained">View</Button>
                                 </CardActions>
                             </Card>
                         </Grid>
@@ -289,7 +300,8 @@ function Home() {
                                     </Typography>
                                 </CardContent>
                                 <CardActions>
-                                    <Button size="small" variant="contained">Buy</Button>
+                                    <Button size="small" variant="contained">Buy +</Button>
+                                    <Button size="small" variant="contained">View</Button>
                                 </CardActions>
                             </Card>
                         </Grid>
@@ -311,7 +323,8 @@ function Home() {
                                     </Typography>
                                 </CardContent>
                                 <CardActions>
-                                    <Button size="small" variant="contained">Buy</Button>
+                                    <Button size="small" variant="contained">Buy +</Button>
+                                    <Button size="small" variant="contained">View</Button>
                                 </CardActions>
                             </Card>
                         </Grid>
@@ -333,7 +346,8 @@ function Home() {
                                     </Typography>
                                 </CardContent>
                                 <CardActions>
-                                    <Button size="small" variant="contained">Buy</Button>
+                                    <Button size="small" variant="contained">Buy +</Button>
+                                    <Button size="small" variant="contained">View</Button>
                                 </CardActions>
                             </Card>
                         </Grid>
@@ -355,7 +369,8 @@ function Home() {
                                     </Typography>
                                 </CardContent>
                                 <CardActions>
-                                    <Button size="small" variant="contained">Buy</Button>
+                                    <Button size="small" variant="contained">Buy +</Button>
+                                    <Button size="small" variant="contained">View</Button>
                                 </CardActions>
                             </Card>
                         </Grid>
@@ -377,7 +392,8 @@ function Home() {
                                     </Typography>
                                 </CardContent>
                                 <CardActions>
-                                    <Button size="small" variant="contained">Buy</Button>
+                                    <Button size="small" variant="contained">Buy +</Button>
+                                    <Button size="small" variant="contained">View</Button>
                                 </CardActions>
                             </Card>
                         </Grid>
@@ -399,7 +415,8 @@ function Home() {
                                     </Typography>
                                 </CardContent>
                                 <CardActions>
-                                    <Button size="small" variant="contained">Buy</Button>
+                                    <Button size="small" variant="contained">Buy +</Button>
+                                    <Button size="small" variant="contained">View</Button>
                                 </CardActions>
                             </Card>
                         </Grid>
@@ -421,7 +438,8 @@ function Home() {
                                     </Typography>
                                 </CardContent>
                                 <CardActions>
-                                    <Button size="small" variant="contained">Buy</Button>
+                                    <Button size="small" variant="contained">Buy +</Button>
+                                    <Button size="small" variant="contained">View</Button>
                                 </CardActions>
                             </Card>
                         </Grid>
@@ -443,7 +461,8 @@ function Home() {
                                     </Typography>
                                 </CardContent>
                                 <CardActions>
-                                    <Button size="small" variant="contained">Buy</Button>
+                                    <Button size="small" variant="contained">Buy +</Button>
+                                    <Button size="small" variant="contained">View</Button>
                                 </CardActions>
                             </Card>
                         </Grid>
@@ -465,7 +484,8 @@ function Home() {
                                     </Typography>
                                 </CardContent>
                                 <CardActions>
-                                    <Button size="small" variant="contained">Buy</Button>
+                                    <Button size="small" variant="contained">Buy +</Button>
+                                    <Button size="small" variant="contained">View</Button>
                                 </CardActions>
                             </Card>
                         </Grid>
@@ -487,7 +507,8 @@ function Home() {
                                     </Typography>
                                 </CardContent>
                                 <CardActions>
-                                    <Button size="small" variant="contained">Buy</Button>
+                                    <Button size="small" variant="contained">Buy +</Button>
+                                    <Button size="small" variant="contained">View</Button>
                                 </CardActions>
                             </Card>
                         </Grid>

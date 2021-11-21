@@ -26,7 +26,15 @@ const useRowStyles = makeStyles({
     },
   });
   
-  function createData(name, calories, fat, carbs, protein, price) {
+  function createData(name, calories, fat, carbs, protein, price, products) {
+    let history = []
+    products.map((product)=>{
+      history.push({
+        date: 'Baseball', // name of product
+        customerId: '20', // price of 1 pack/ item,
+        amount: '23'
+      })
+    })
     return {
       name,
       calories,
@@ -34,10 +42,7 @@ const useRowStyles = makeStyles({
       carbs,
       protein,
       price,
-      history: [
-        { date: '2020-01-05', customerId: '11091700', amount: 3 },
-        { date: '2020-01-02', customerId: 'Anonymous', amount: 1 },
-      ],
+      history: history
     };
   }
   
@@ -57,25 +62,25 @@ const useRowStyles = makeStyles({
           <TableCell component="th" scope="row">
             {row.name}
           </TableCell>
-          <TableCell align="right">{row.calories}</TableCell>
-          <TableCell align="right">{row.fat}</TableCell>
-          <TableCell align="right">{row.carbs}</TableCell>
-          <TableCell align="right">{row.protein}</TableCell>
+          <TableCell align="left">{row.calories}</TableCell>
+          <TableCell align="left">{row.fat}</TableCell>
+          <TableCell align="left">{row.carbs}</TableCell>
+          <TableCell align="left">{row.protein}</TableCell>
         </TableRow>
         <TableRow>
           <TableCell style={{ paddingBottom: 0, paddingTop: 0 }} colSpan={6}>
             <Collapse in={open} timeout="auto" unmountOnExit>
               <Box margin={1}>
                 <Typography variant="h6" gutterBottom component="div">
-                  History
+                  Detail
                 </Typography>
                 <Table size="small" aria-label="purchases">
                   <TableHead>
                     <TableRow>
-                      <TableCell>Date</TableCell>
-                      <TableCell>Customer</TableCell>
-                      <TableCell align="right">Amount</TableCell>
-                      <TableCell align="right">Total price ($)</TableCell>
+                      <TableCell>Product Name</TableCell>
+                      <TableCell>Price</TableCell>
+                      <TableCell align="left">Qunatity</TableCell>
+                      <TableCell align="left">Total price (Rs.)</TableCell>
                     </TableRow>
                   </TableHead>
                   <TableBody>
@@ -85,8 +90,8 @@ const useRowStyles = makeStyles({
                           {historyRow.date}
                         </TableCell>
                         <TableCell>{historyRow.customerId}</TableCell>
-                        <TableCell align="right">{historyRow.amount}</TableCell>
-                        <TableCell align="right">
+                        <TableCell align="left">{historyRow.amount}</TableCell>
+                        <TableCell align="left">
                           {Math.round(historyRow.amount * row.price * 100) / 100}
                         </TableCell>
                       </TableRow>
@@ -120,31 +125,9 @@ const useRowStyles = makeStyles({
   };
   
   const rows = [
-    createData('Frozen yoghurt', 159, 6.0, 24, 4.0, 3.99),
-    createData('Ice cream sandwich', 237, 9.0, 37, 4.3, 4.99),
-    createData('Eclair', 262, 16.0, 24, 6.0, 3.79),
-    createData('Cupcake', 305, 3.7, 67, 4.3, 2.5),
-    createData('Gingerbread', 356, 16.0, 49, 3.9, 1.5),
-    createData('Frozen yoghurt', 159, 6.0, 24, 4.0, 3.99),
-    createData('Ice cream sandwich', 237, 9.0, 37, 4.3, 4.99),
-    createData('Eclair', 262, 16.0, 24, 6.0, 3.79),
-    createData('Cupcake', 305, 3.7, 67, 4.3, 2.5),
-    createData('Gingerbread', 356, 16.0, 49, 3.9, 1.5),
-    createData('Frozen yoghurt', 159, 6.0, 24, 4.0, 3.99),
-    createData('Ice cream sandwich', 237, 9.0, 37, 4.3, 4.99),
-    createData('Eclair', 262, 16.0, 24, 6.0, 3.79),
-    createData('Cupcake', 305, 3.7, 67, 4.3, 2.5),
-    createData('Gingerbread', 356, 16.0, 49, 3.9, 1.5),
-    createData('Frozen yoghurt', 159, 6.0, 24, 4.0, 3.99),
-    createData('Ice cream sandwich', 237, 9.0, 37, 4.3, 4.99),
-    createData('Eclair', 262, 16.0, 24, 6.0, 3.79),
-    createData('Cupcake', 305, 3.7, 67, 4.3, 2.5),
-    createData('Gingerbread', 356, 16.0, 49, 3.9, 1.5),
-    createData('Frozen yoghurt', 159, 6.0, 24, 4.0, 3.99),
-    createData('Ice cream sandwich', 237, 9.0, 37, 4.3, 4.99),
-    createData('Eclair', 262, 16.0, 24, 6.0, 3.79),
-    createData('Cupcake', 305, 3.7, 67, 4.3, 2.5),
-    createData('Gingerbread', 356, 16.0, 49, 3.9, 1.5),
+    createData('1234567890', '120099883', '12-June-2021', 'Placed', '15000', 3.99, [1,2,3,4]),
+    createData('1234567890', '120099883', '12-June-2021', 'Shipped', '5000', 3.99, [1,2,3,4]),
+    createData('1234567890', '120099883', '12-June-2021', 'Delivered', '2000', 3.99, [1,2,3,4]),
   ];
   
   function CollapsibleTable() {
@@ -155,10 +138,10 @@ const useRowStyles = makeStyles({
             <TableRow>
               <TableCell />
               <TableCell>Order Id</TableCell>
-              <TableCell align="right">Name</TableCell>
-              <TableCell align="right">Order Date</TableCell>
-              <TableCell align="right">Status</TableCell>
-              <TableCell align="right">Total</TableCell>
+              <TableCell align="left">User Id</TableCell>
+              <TableCell align="left">Order Date</TableCell>
+              <TableCell align="left">Status</TableCell>
+              <TableCell align="left">Total</TableCell>
             </TableRow>
           </TableHead>
           <TableBody>
