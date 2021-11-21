@@ -10,6 +10,7 @@ import Grid from '@material-ui/core/Grid';
 import LockOutlinedIcon from '@material-ui/icons/LockOutlined';
 import Typography from '@material-ui/core/Typography';
 import { makeStyles } from '@material-ui/core/styles';
+import { useHistory } from 'react-router';
 
 function Copyright() {
     return (
@@ -61,10 +62,13 @@ export default function Login() {
     const [email, setEmail] = useState('')
     const [password, setPassword] = useState('')
 
+    const history = useHistory()
+
     function handleLogin(event){
         event.preventDefault();
         console.log('Email ', email)
         console.log('Password ', password)
+        history.push('/admin/dashboard')
     }
 
     return (
