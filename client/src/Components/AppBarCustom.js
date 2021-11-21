@@ -14,6 +14,7 @@ import ListItemIcon from '@material-ui/core/ListItemIcon';
 import ListItemText from '@material-ui/core/ListItemText';
 import InboxIcon from '@material-ui/icons/MoveToInbox';
 import MailIcon from '@material-ui/icons/Mail';
+import { useHistory } from "react-router-dom";
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -35,6 +36,7 @@ const useStyles = makeStyles((theme) => ({
 
 export default function ButtonAppBar({text}) {
   const classes = useStyles();
+  let history = useHistory();
 
   const [state, setState] = useState({
     top: false,
@@ -63,10 +65,10 @@ export default function ButtonAppBar({text}) {
       onKeyDown={toggleDrawer(anchor, false)}
     >
       <List>
-        {['Inbox', 'Starred', 'Send email', 'Drafts'].map((text, index) => (
-          <ListItem button key={text}>
+        {[{name: 'Add Product', route: '/admin/product/add'}, {name:'Modify Product', route: '/admin/product/edit'}, {name: 'Manage Customers', route: '/admin/customer'}, {name: 'Manage Orders', route: '/admin/orders'}].map((entity, index) => (
+          <ListItem button key={entity.name} onClick={()=>history.push(entity.route)}>
             <ListItemIcon>{index % 2 === 0 ? <InboxIcon /> : <MailIcon />}</ListItemIcon>
-            <ListItemText primary={text} />
+            <ListItemText primary={entity.name} />
           </ListItem>
         ))}
       </List>

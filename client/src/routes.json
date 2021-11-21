@@ -4,6 +4,6 @@
     "adminDashBoard": "/admin/dashboard",
     "adminProductAdd": "/admin/product/add",
     "adminProductEdit": "/admin/product/edit",
-    "adminManageCustomer": "/admin/customer",
+    "adminManageCustomer": "/admin/customer", 
     "adminManageOrder": "/admin/orders"
 }
