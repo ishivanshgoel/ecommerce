@@ -6,7 +6,7 @@ const Claim = require('../../../models/claim')
 /**list of all order of user */
 router.get('/all', async (req, res, next) => {
     try {
-        const userId = '111' // get from request payload
+        const userId = 'shoes' // get from request payload
         const orders = await Order.find({ user: userId })
         res.json({
             data: orders,

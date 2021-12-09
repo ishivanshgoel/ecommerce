@@ -9,11 +9,12 @@ import Preview from './preview.png'
 
 // components
 import AppBarCustom from '../../Components/AppBarCustom'
+const axios = require('axios');
 
 function AddProduct() {
 
     const [image, setImage] = useState("")
-    const [imageUrl, setImageUrl] = useState(null);
+    const [imageUrl, setImageUrl] = useState("http://localhost:3000");
     const [name, setName] = useState("")
     const [price, setPrice] = useState("")
     const [quantity, setQuantity] = useState("")
@@ -28,10 +29,21 @@ function AddProduct() {
 
     const handleAddProduct = async () => {
         try {
-            alert('Product Added')
-            console.log('Image ', image)
-        } catch (err) {
-            alert(err.message)
+            const response = await axios.post('http://localhost:5000/admin/product', {
+                name: name, 
+                price: price, 
+                quantity: quantity, 
+                description: description, 
+                category: category, 
+                imageUrl: imageUrl
+            });
+            let data = response.data
+            if(data.message == "success"){
+                let id = data.data._id
+                alert('Product Added ', id)
+            }           
+        } catch (error) {
+            console.error(error);
         }
     }
 
@@ -42,10 +54,10 @@ function AddProduct() {
                 <Grid item xs={12} sm={6}>
                     {imageUrl && image ? (
                         <Box mt={2} textAlign="center">
-                            <img src={imageUrl} alt={image.name} height="300px" style={{border: "2px solid black"}} />
+                            <img src={imageUrl} alt={image.name} height="300px" style={{ border: "2px solid black" }} />
                         </Box>
                     ) : <Box mt={2} textAlign="center">
-                        <img src={Preview} alt={'preview-dummy'} height="300px" style={{border: "2px solid black"}} />
+                        <img src={Preview} alt={'preview-dummy'} height="300px" style={{ border: "2px solid black" }} />
                     </Box>}
                     <Grid container justify="center">
                         <input
@@ -63,23 +75,23 @@ function AddProduct() {
                     </Grid>
                 </Grid>
                 <Grid item xs={12} sm={6}>
-                    <FormControl style={{margin: 10}}>
+                    <FormControl style={{ margin: 10 }}>
                         <InputLabel htmlFor="my-input">Name</InputLabel>
                         <Input id="my-input" aria-describedby="my-helper-text" style={{ width: 500 }} onChange={(event) => setName(event.target.value)} />
                     </FormControl>
-                    <FormControl style={{margin: 10}}>
+                    <FormControl style={{ margin: 10 }}>
                         <InputLabel htmlFor="my-input">Price</InputLabel>
                         <Input type="number" id="my-input" aria-describedby="my-helper-text" style={{ width: 500 }} onChange={(event) => setPrice(event.target.value)} />
                     </FormControl>
-                    <FormControl style={{margin: 10}}>
+                    <FormControl style={{ margin: 10 }}>
                         <InputLabel htmlFor="my-input">Quantity</InputLabel>
                         <Input type="number" id="my-input" aria-describedby="my-helper-text" style={{ width: 500 }} onChange={(event) => setQuantity(event.target.value)} />
                     </FormControl>
-                    <FormControl style={{margin: 10}}>
+                    <FormControl style={{ margin: 10 }}>
                         <InputLabel htmlFor="my-input">Description</InputLabel>
                         <Input id="my-input" aria-describedby="my-helper-text" style={{ width: 500 }} multiline rows={10} rowsMax={20} onChange={(event) => setDescription(event.target.value)} />
                     </FormControl>
-                    <FormControl style={{margin: 10}}>
+                    <FormControl style={{ margin: 10 }}>
                         <InputLabel htmlFor="my-input">Category (Brand Name)</InputLabel>
                         <Input id="my-input" aria-describedby="my-helper-text" style={{ width: 500 }} onChange={(event) => setCategory(event.target.value)} />
                     </FormControl>

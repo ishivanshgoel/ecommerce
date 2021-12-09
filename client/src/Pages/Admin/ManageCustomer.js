@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import PropTypes from 'prop-types';
 import { makeStyles } from '@material-ui/core/styles';
 import Box from '@material-ui/core/Box';
@@ -18,114 +18,97 @@ import KeyboardArrowUpIcon from '@material-ui/icons/KeyboardArrowUp';
 // components
 import AppBarCustom from '../../Components/AppBarCustom'
 
+import axios from 'axios'
+
 const useRowStyles = makeStyles({
-    root: {
-      '& > *': {
-        borderBottom: 'unset',
-      },
+  root: {
+    '& > *': {
+      borderBottom: 'unset',
     },
-  });
-  
-  function createData(name, calories, fat, carbs, protein, price) {
-    return {
-      name,
-      calories,
-      fat,
-      carbs,
-      protein,
-      price,
-      history: [
-        { date: '2020-01-05', customerId: '11091700', amount: 3 },
-        { date: '2020-01-02', customerId: 'Anonymous', amount: 1 },
-      ],
-    };
-  }
-  
-  function Row(props) {
-    const { row } = props;
-    const [open, setOpen] = React.useState(false);
-    const classes = useRowStyles();
-  
-    return (
-      <React.Fragment>
-        <TableRow className={classes.root}>
-          <TableCell>
-            <IconButton aria-label="expand row" size="small" onClick={() => setOpen(!open)}>
-              {open ? <KeyboardArrowUpIcon /> : <KeyboardArrowDownIcon />}
-            </IconButton>
-          </TableCell>
-          <TableCell component="th" scope="row">
-            {row.name}
-          </TableCell>
-          <TableCell align="left">{row.calories}</TableCell>
-          <TableCell align="left">{row.fat}</TableCell>
-          <TableCell align="left">{row.carbs}</TableCell>
-          <TableCell align="left">{row.protein}</TableCell>
-        </TableRow>
-        <TableRow>
-          <TableCell style={{ paddingBottom: 0, paddingTop: 0 }} colSpan={6}>
-            <Collapse in={open} timeout="auto" unmountOnExit>
-              <Box margin={1}>
-                <Typography variant="h6" gutterBottom component="div">
-                  History
-                </Typography>
-                <Table size="small" aria-label="purchases">
-                  <TableHead>
-                    <TableRow>
-                      <TableCell>Date</TableCell>
-                      <TableCell>Customer</TableCell>
-                      <TableCell align="left">Amount</TableCell>
-                      <TableCell align="left">Total price ($)</TableCell>
+  },
+});
+
+
+function Row(props) {
+  const { row } = props;
+  const [open, setOpen] = React.useState(false);
+  const classes = useRowStyles();
+
+  return (
+    <React.Fragment>
+      <TableRow className={classes.root}>
+        <TableCell>
+          {/* <IconButton aria-label="expand row" size="small" onClick={() => setOpen(!open)}>
+            {open ? <KeyboardArrowUpIcon /> : <KeyboardArrowDownIcon />}
+          </IconButton> */}
+        </TableCell>
+        <TableCell component="th" scope="row">
+          {row._id}
+        </TableCell>
+        <TableCell align="left">{row.firstName + row.lastName}</TableCell>
+        <TableCell align="left">{row.email}</TableCell>
+        <TableCell align="left">{row.phoneNumber}</TableCell>
+        <TableCell align="left">{row.createdOn}</TableCell>
+      </TableRow>
+      <TableRow>
+        <TableCell style={{ paddingBottom: 0, paddingTop: 0 }} colSpan={6}>
+          <Collapse in={open} timeout="auto" unmountOnExit>
+            <Box margin={1}>
+              <Typography variant="h6" gutterBottom component="div">
+                History
+              </Typography>
+              <Table size="small" aria-label="purchases">
+                <TableHead>
+                  <TableRow>
+                    <TableCell>Date</TableCell>
+                    <TableCell>Customer</TableCell>
+                    <TableCell align="left">Amount</TableCell>
+                    <TableCell align="left">Total price ($)</TableCell>
+                  </TableRow>
+                </TableHead>
+                <TableBody>
+                  {/* {row.history.map((historyRow) => (
+                    <TableRow key={historyRow.date}>
+                      <TableCell component="th" scope="row">
+                        {historyRow.date}
+                      </TableCell>
+                      <TableCell>{historyRow.customerId}</TableCell>
+                      <TableCell align="left">{historyRow.amount}</TableCell>
+                      <TableCell align="left">
+                        {Math.round(historyRow.amount * row.price * 100) / 100}
+                      </TableCell>
                     </TableRow>
-                  </TableHead>
-                  <TableBody>
-                    {row.history.map((historyRow) => (
-                      <TableRow key={historyRow.date}>
-                        <TableCell component="th" scope="row">
-                          {historyRow.date}
-                        </TableCell>
-                        <TableCell>{historyRow.customerId}</TableCell>
-                        <TableCell align="left">{historyRow.amount}</TableCell>
-                        <TableCell align="left">
-                          {Math.round(historyRow.amount * row.price * 100) / 100}
-                        </TableCell>
-                      </TableRow>
-                    ))}
-                  </TableBody>
-                </Table>
-              </Box>
-            </Collapse>
-          </TableCell>
-        </TableRow>
-      </React.Fragment>
-    );
-  }
-  
-  Row.propTypes = {
-    row: PropTypes.shape({
-      calories: PropTypes.number.isRequired,
-      carbs: PropTypes.number.isRequired,
-      fat: PropTypes.number.isRequired,
-      history: PropTypes.arrayOf(
-        PropTypes.shape({
-          amount: PropTypes.number.isRequired,
-          customerId: PropTypes.string.isRequired,
-          date: PropTypes.string.isRequired,
-        }),
-      ).isRequired,
-      name: PropTypes.string.isRequired,
-      price: PropTypes.number.isRequired,
-      protein: PropTypes.number.isRequired,
-    }).isRequired,
-  };
-  
-  const rows = [
-    createData('123456', 'Shivansh Goel', 'shivansh@gmail.com', '9050787517', '-', 3.99),
-    createData('906555', 'Prantika Sharma', 'prantika@gmail.com', '99999999999', '-', 4.99),
-  ];
-  
-  function CollapsibleTable() {
-    return (
+                  ))} */}
+                </TableBody>
+              </Table>
+            </Box>
+          </Collapse>
+        </TableCell>
+      </TableRow>
+    </React.Fragment>
+  );
+}
+
+function ManageCustomer() {
+
+  const [users, setUsers] = useState([])
+
+  useEffect(async() => {
+    try {
+      const response = await axios.get('http://localhost:5000/admin/customer');
+      console.log('Response ', response)
+      if (response.data.message = "success") {
+        let data = response.data.data
+        setUsers(data)
+      }
+    } catch (error) {
+      console.error(error);
+    }
+  }, [])
+
+  return (
+    <div>
+      <AppBarCustom text={'Manage Customers'} />
       <TableContainer component={Paper}>
         <Table aria-label="collapsible table">
           <TableHead>
@@ -135,27 +118,18 @@ const useRowStyles = makeStyles({
               <TableCell align="left">Name</TableCell>
               <TableCell align="left">Email</TableCell>
               <TableCell align="left">Phone</TableCell>
-              <TableCell align="left">Mobile</TableCell>
+              <TableCell align="left">Created On</TableCell>
             </TableRow>
           </TableHead>
           <TableBody>
-            {rows.map((row) => (
-              <Row key={row.name} row={row} />
+            {users.map((row) => (
+              <Row key={row._id} row={row} />
             ))}
           </TableBody>
         </Table>
       </TableContainer>
-    );
-  }
-
-
-function ManageCustomer() {
-    return (
-        <div>
-            <AppBarCustom text={'Manage Customers'}/>
-            <CollapsibleTable></CollapsibleTable>
-        </div>
-    )
+    </div>
+  )
 }
 
 export default ManageCustomer

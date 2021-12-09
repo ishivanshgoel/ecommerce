@@ -27,16 +27,16 @@ function Home() {
       <div className={classes.root}>
         <Grid container spacing={3}>
           <Grid className={classes.displayCount} item xs={12} sm={3}>
-            <DisplayCount count={1000} text={'Customers'} />
+            <DisplayCount count={1} text={'Customers'} />
           </Grid>
           <Grid className={classes.displayCount} item xs={12} sm={3}>
-            <DisplayCount count={200} text={'Orders'} />
+            <DisplayCount count={22} text={'Orders'} />
           </Grid>
           <Grid className={classes.displayCount} item xs={12} sm={3}>
-            <DisplayCount count={576} text={'Products'} />
+            <DisplayCount count={6} text={'Products'} />
           </Grid>
           <Grid className={classes.displayCount} item xs={12} sm={3}>
-            <DisplayCount count={25} text={'Claims'} />
+            <DisplayCount count={0} text={'Claims'} />
           </Grid>
         </Grid>
       </div>

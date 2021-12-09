@@ -5,7 +5,7 @@ const express = require('express')
 const router = express.Router()
 const User = require('../../../models/user')
 
-/** get all orders */
+/** get all customers*/
 router.get('/', async(req, res, next)=>{
     try{
 

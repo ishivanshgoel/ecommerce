@@ -65,7 +65,7 @@ export default function ButtonAppBar({text}) {
       onKeyDown={toggleDrawer(anchor, false)}
     >
       <List>
-        {[{name: 'Add Product', route: '/admin/product/add'}, {name: 'Manage Customers', route: '/admin/customer'}, {name: 'Manage Orders', route: '/admin/orders'}].map((entity, index) => (
+        {[{name: 'Add Product', route: '/admin/product/add'}, {name:'Modify Product', route: '/admin/product/edit'}, {name: 'Manage Customers', route: '/admin/customer'}, {name: 'Manage Orders', route: '/admin/orders'}].map((entity, index) => (
           <ListItem button key={entity.name} onClick={()=>history.push(entity.route)}>
             <ListItemIcon>{index % 2 === 0 ? <InboxIcon /> : <MailIcon />}</ListItemIcon>
             <ListItemText primary={entity.name} />
@@ -87,11 +87,11 @@ export default function ButtonAppBar({text}) {
       </SwipeableDrawer>
       <AppBar position="static">
         <Toolbar>
-          <IconButton edge="start" className={classes.menuButton} color="inherit" aria-label="menu" onClick={toggleDrawer(anchor, true)}>
+          {/* <IconButton edge="start" className={classes.menuButton} color="inherit" aria-label="menu" onClick={toggleDrawer(anchor, true)}>
             <MenuIcon />
-          </IconButton>
+          </IconButton> */}
           <Typography variant="h6" className={classes.title}>
-            Admin Panel {text? ' - ' + text : null}
+            View Product{text? ' - ' + text : null}
           </Typography>
           <Button color="inherit">Menu</Button>
         </Toolbar>
